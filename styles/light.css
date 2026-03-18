@@ -1,9 +1,3 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
   --backgroung-image: url("../images/cover-image-light.png");
   --background-color: #FFF1F7;
@@ -19,7 +13,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root.theme-light {
+  :root {
     --backgroung-image: url("../images/cover-image-light.png");
     --background-color: #FFF1F7;
     --accent-color: #FF8DCB;
