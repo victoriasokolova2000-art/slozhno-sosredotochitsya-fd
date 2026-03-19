@@ -99,8 +99,6 @@
 .decorated-zone::before {
   position: absolute;
   content: "";
-  top: 0;
-  right: 0;
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--accent-color-decor-angle);
@@ -112,8 +110,6 @@
 .decorated-zone::after {
   position: absolute;
   content: "";
-  bottom: 0;
-  left: 0;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--accent-color-decor-angle);
@@ -213,6 +209,7 @@
   margin-inline-end: 10px;
   gap: 10px;
   margin-block-start: 30px;
+  object-position: center;
 }
 
 .title-card {
@@ -221,7 +218,8 @@
 }
 
 .img_card {
-  width: calc(100vw - 20px);
+  width: 100%;
+  object-fit: cover;
 }
 
 .footer {
