@@ -41,7 +41,7 @@
   color: var(--accent-color-decor-angle);
   border: none;
   text-transform: lowercase;
-  font-family: var(--font);
+  font-family: var(--font), monospace;
   font-size: var(--text-size);
   line-height: 18px;
   cursor: pointer;
@@ -65,7 +65,7 @@
 }
 
 .website_title {
-  font-family: var(--font);
+  font-family: var(--font), monospace;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--color-web-title);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -77,7 +77,7 @@
   display: var(--decor-element-displey);
   position: absolute;
   justify-self: end;
-  font-family: var(--font);
+  font-family: var(--font), monospace;
   font-size: var(--text-size);
   color: var(--accent-color);
   margin-inline-end: 38px;
@@ -105,8 +105,8 @@
   height: 25px;
   border-top: 1px solid var(--accent-color-decor-angle);
   border-right: 1px solid var(--accent-color-decor-angle);
-  margin-block-start: 10px;
-  margin-inline-end: 10px;
+  top: 10px;
+  right: 10px;
 }
 
 .decorated-zone::after {
@@ -118,13 +118,13 @@
   height: 25px;
   border-bottom: 1px solid var(--accent-color-decor-angle);
   border-left: 1px solid var(--accent-color-decor-angle);
-  margin-block-end: 10px;
-  margin-inline-start: 10px;
+  bottom: 10px;
+  left: 10px;
 }
 
 .title-decor {
   background-color: var(--bg-color-decor);
-  font-family: var(--font);
+  font-family: var(--font), monospace;
   font-size: var(--text-size);
   color: var(--accent-color-decor);
   font-weight: 700;
@@ -147,7 +147,7 @@
 }
 
 .main_heading {
-  font-family: var(--font);
+  font-family: var(--font), monospace;
   color: var(--accent-color-title-section);
   font-size: var(--text-size);
   font-weight: 700;
@@ -157,7 +157,7 @@
 .main_text {
   margin-block-start: 10px;
   margin-block-end: 20px;
-  font-family: var(--font);
+  font-family: var(--font), monospace;
   color: var(--main-text-color);
   font-size: var(--text-size);
   line-height: 23.4px;
@@ -177,6 +177,11 @@
   border-bottom: 1px solid var(--main-text-color, #F1B2CE);
 }
 
+.word_link:focus {
+  border: none;
+  outline: none;
+}
+
 .word_link:focus-visible {
   border: none;
   outline: 1px solid var(--main-text-color, #F1B2CE);
@@ -185,14 +190,19 @@
 .problem_con {
   grid-template-rows: repeat(4, min-content);
   align-items: start;
+  margin-block-start: 30px;
 }
 
 .heading_problems, .heading_recom {
-  margin-top: -10px;
+  margin-block-start: 0;
 }
 
 .block_sky_cloud {
   margin-block-start: 10px;
+}
+
+.recommendations {
+  margin-block-start: 30px;
 }
 
 .card {
@@ -263,13 +273,13 @@
   }
 
   .decorated-zone::before {
-    margin-block-start: 20px;
-    margin-inline-end: 20px;
+    top: 20px;
+    right: 20px;
   }
 
   .decorated-zone::after {
-    margin-block-end: 20px;
-    margin-inline-start: 20px;
+    bottom: 20px;
+    left: 20px;
   }
 
   .concentration {
@@ -291,7 +301,7 @@
 
   .problem_con {
     grid-template-rows: repeat(4, min-content);
-    margin-block-start: 70px;
+    margin-block-start: 60px;
   }
 
   .heading_problems {
@@ -326,7 +336,6 @@
     line-height: 23.4px;
     white-space: pre-line;
     padding: 0;
-    padding-block-start: 9px;
   }
 
   .block_sky_cloud, .block_music, .block_walk, .block_good_food, .block_reed {
@@ -415,6 +424,7 @@
   
   .website_title {
     grid-column: 1/4;
+    justify-self: start;
   }
 
   .decor_header {
