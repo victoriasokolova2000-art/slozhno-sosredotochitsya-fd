@@ -130,7 +130,6 @@
   grid-row: 3;
   align-self: center;
   margin-block-end: 10px;
-
 }
 
 .concentration {
@@ -140,6 +139,10 @@
   grid-template-rows: repeat(3, min-content);
   margin-inline-start: 10px;
   margin-inline-end: 10px;
+}
+
+.block {
+  width: 100%;
 }
 
 .main_heading {
@@ -183,7 +186,7 @@
   outline: 1px solid var(--main-text-color, #F1B2CE);
 }
 
-.problem_con {
+.problems {
   grid-template-rows: repeat(4, min-content);
   align-items: start;
   margin-block-start: 30px;
@@ -191,10 +194,6 @@
 
 .heading_problems, .heading_recom {
   margin-block-start: 0;
-}
-
-.block_sky_cloud {
-  margin-block-start: 10px;
 }
 
 .recommendations {
@@ -301,27 +300,19 @@
     grid-column: 2;
   }
 
-  .problem_con {
-    grid-template-rows: repeat(4, min-content);
-    margin-block-start: 60px;
+  .problems {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+  }
+
+  .problems .block {
+    grid-column: 1/4;
   }
 
   .heading_problems {
     grid-column: 1/2;
   }
-
-  .block_concentration, .block_food, .block_gadgest {
-    grid-column: 1/3;
-  }
   
-  .block_food {
-    grid-row: 3;
-  }
-  
-  .block_gadgest {
-    grid-row: 4;
-  }
-
   .recommendations {
     grid-template-rows: repeat(6, min-content);
     grid-template-columns: 1fr 2fr;
@@ -436,12 +427,11 @@
     width: 100%;
   }
 
-  .problem_con {
-    grid-template-rows: min-content 1fr;
+  .problems {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    grid-auto-rows: min-content;
   }
 
   .heading_problems {
@@ -449,18 +439,12 @@
     grid-column: 1;
   }
 
-  .block_concentration {
+  .problems .block {
     grid-column: auto;
-    grid-row: 2;
+    grid-row: span 2;
   }
 
-  .block_food {
-    grid-column: auto;
-    grid-row: 2;
-  }
-
-  .block_gadgest {
-    grid-column: auto;
+  .problems .block:nth-child(-n + 4) {
     grid-row: 2;
   }
 
